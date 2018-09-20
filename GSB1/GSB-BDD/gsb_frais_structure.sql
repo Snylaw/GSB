@@ -17,7 +17,6 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Base de données: `gsb_frais`
 --
-
 -- --------------------------------------------------------
 
 --
@@ -60,6 +59,7 @@ CREATE TABLE IF NOT EXISTS `Visiteur` (
   `cp` char(5) DEFAULT NULL,
   `ville` char(30) DEFAULT NULL,
   `dateEmbauche` date DEFAULT NULL,
+  `role` boolean,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
 

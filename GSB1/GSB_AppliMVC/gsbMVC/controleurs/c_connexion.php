@@ -21,8 +21,20 @@ switch($action){
 			$id = $visiteur['id'];
 			$nom =  $visiteur['nom'];
 			$prenom = $visiteur['prenom'];
-			connecter($id,$nom,$prenom);
-			include("vues/v_sommaire.php");
+			$role = $visiteur['role'];
+			connecter($id,$nom,$prenom,$role);
+			if($role == '1'){
+				include("vues/v_sommaire_comptable.php");
+				echo "<script>
+						 document.body.style.background = '#ff9900';
+						 var entt = document.getElementById('entete');
+						 entt.style.background = '#ffad33'; 
+					 </script>";
+			}
+			else{
+				include("vues/v_sommaire_visiteur.php");
+			}
+			
 		}
 		break;
 	}
