@@ -23,18 +23,21 @@ switch($action){
 			$prenom = $visiteur['prenom'];
 			$role = $visiteur['role'];
 			connecter($id,$nom,$prenom,$role);
-			if($role == '1'){
+			if ($role == '1'){
 				include("vues/v_sommaire_comptable.php");
 				echo "<script>
-						 document.body.style.background = '#ff9900';
-						 var entt = document.getElementById('entete');
-						 entt.style.background = '#ffad33'; 
-					 </script>";
+						document.body.style.background = '#ff9900';
+						var entt = document.getElementById('entete');
+						entt.style.background = '#ffad33';
+						var ecriture = document.getElementById('menuGauche');
+						ecriture.style.color = '#ffad33';
+						var list = document.getElementById('menuList');
+						list.style.color = '#ffad33';
+					</script>";
 			}
-			else{
+			else {
 				include("vues/v_sommaire_visiteur.php");
-			}
-			
+			}	
 		}
 		break;
 	}
